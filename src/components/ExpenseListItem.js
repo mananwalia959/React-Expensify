@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import moment from 'moment'
 
 
 
@@ -8,7 +9,9 @@ import {Link} from 'react-router-dom'
     <Link to={`/edit/${id}`}>
     <h3>{transaction[0].toUpperCase()+ transaction.slice(1)}:{description}</h3>
     </Link>
-    <p>{amount} - {createdAt}</p>
+    <p> Rs.{(amount/100)}
+     __ 
+    {moment(createdAt).format('MMMM Do, YYYY')}</p>
     </div>
 )
 
