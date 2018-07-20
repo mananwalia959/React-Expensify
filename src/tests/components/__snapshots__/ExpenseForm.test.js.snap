@@ -127,7 +127,7 @@ exports[`should render ExpenseForm correctly 1`] = `
       value=""
     />
     <button>
-      Add Expense
+      Confirm
     </button>
   </form>
 </div>
@@ -260,7 +260,7 @@ exports[`should render ExpenseForm correctly with props 1`] = `
       value=""
     />
     <button>
-      Add Expense
+      Confirm
     </button>
   </form>
 </div>
@@ -393,7 +393,7 @@ exports[`should render error for invalid form submission 1`] = `
       value=""
     />
     <button>
-      Add Expense
+      Confirm
     </button>
   </form>
 </div>
@@ -529,7 +529,7 @@ exports[`should render error for invalid form submission 2`] = `
       value=""
     />
     <button>
-      Add Expense
+      Confirm
     </button>
   </form>
 </div>

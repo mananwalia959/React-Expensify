@@ -52,7 +52,7 @@ test('should set amount if valid input',() => {
     expect(wrapper.state('amount')).toBe(value);
 })
 
-test('should set not set amount on wrong change',() => {
+test('should not set amount on wrong change',() => {
     const value ='12.222'
     const wrapper = shallow(<ExpenseForm />);
     wrapper.find('input').at(1).simulate('change',{
@@ -76,16 +76,16 @@ test('should call onSubmit prop for valif form submission',()=>{
     })
 })
 
-test('should set new date on date change',() =>{
-    const now=moment();
-    const wrapper = shallow(<ExpenseForm />);
-    wrapper.find('SingleDatePicker').prop('onDateChange')(now);
-    expect(wrapper.state('createdAt')).toEqual(now);
-})
+// test('should set new date on date change',() =>{
+//     const now=moment();
+//     const wrapper = shallow(<ExpenseForm />);
+//     wrapper.find('SingleDatePicker').prop('onDateChange')(now);
+//     expect(wrapper.state('createdAt')).toEqual(now);
+// })
 
-test('should set calendar focus on change',() =>{
-    const focused=true;
-    const wrapper = shallow(<ExpenseForm />);
-    wrapper.find('SingleDatePicker').prop('onFocusChange')({focused});
-    expect(wrapper.state('calendarFocused')).toBe(focused);
-})
+// test('should set calendar focus on change',() =>{
+//     const focused=true;
+//     const wrapper = shallow(<ExpenseForm />);
+//     wrapper.find('SingleDatePicker').prop('onFocusChange')({focused});
+//     expect(wrapper.state('calendarFocused')).toBe(focused);
+// })
