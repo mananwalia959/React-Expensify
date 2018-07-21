@@ -5,7 +5,8 @@
   "author": "Andrew Mead",
   "license": "MIT",
   "engines": {
-    "node": "10.4.0"
+    "node": "10.4.0",
+    "yarn": "1.7.0"
   },
   "scripts": {
     "build:dev": "webpack",
