@@ -14,7 +14,7 @@ beforeEach((done) => {
     expenses.forEach(({ id, description, note, amount, createdAt,transaction }) => {
       expensesData[id] = { description, note, amount, createdAt,transaction };
     });
-    database.ref('expenses').set(expensesData).then(() => done());
+    database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done());
   });
 
 test('should setup remove expense action object',() =>{
@@ -34,6 +34,7 @@ test('should remove expense from firebase', (done) => {
         type: 'remove',
         id
       });
+      console.log(`users/${uid}/expenses/${id}`)
       return database.ref(`users/${uid}/expenses/${id}`).once('value');
     }).then((snapshot) => {
       expect(snapshot.val()).toBeFalsy();
