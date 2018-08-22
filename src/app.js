@@ -38,8 +38,6 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log("crix")
-    console.log(user.uid)
     store.dispatch(login(user.uid)); 
     store.dispatch(startSetExpenses()).then(() => {
       renderapp();
