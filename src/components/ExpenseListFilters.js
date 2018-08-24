@@ -33,25 +33,41 @@ export class ExpenseListFilters extends React.Component{
 
     render(){
         return(
-            <div>
+        <div className='content-container'>
+        <div className='input-group'>
+       
+        <div className='input-group__item'>
+            <select 
+            className='select'
+            value={this.props.filters.sortby} 
+            onChange={this.onSortChange}>
+            <option value = 'date' > Date </option>
+            <option value = 'amount'> Amount </option>
+            </select>
+        </div>
+        <div className='input-group__item'>
+            <select
+            className= 'select' 
+            value={this.props.filters.transactiontype} 
+            onChange={this.onTransactionTypeChange}>
+            <option value = 'both' > Both </option>
+            <option value = 'expense'> Expense </option>
+            <option value = 'income' > Income </option>
+            </select>
+        </div>
+        </div>
+        <div className="input-group">
+        <div className='input-group__item'>
         <input 
-        type ='text' 
+        type ='text'
+        className='text-input' 
+        placeholder='Search transactions'
         value={this.props.filters.text} 
         onChange={this.onTextChange} 
-        /> 
+        />
+        </div>
 
-        <select 
-        value={this.props.filters.sortby} 
-        onChange={this.onSortChange}>
-        <option value = 'date' > Date </option>
-        <option value = 'amount'> Amount </option>
-        </select>
-        <select value={this.props.filters.transactiontype} 
-        onChange={this.onTransactionTypeChange}>
-        <option value = 'both' > Both </option>
-        <option value = 'expense'> Expense </option>
-        <option value = 'income' > Income </option>
-        </select>
+        <div className='input-group__item'>
         <DateRangePicker
         startDate={this.props.filters.startDate}
         startDateId={this.props.filters.startDate?this.props.filters.startDate.toString():'No_Start'}
@@ -64,6 +80,8 @@ export class ExpenseListFilters extends React.Component{
         numberOfMonths={1}
         isOutsideRange={()=>false}
         />
+        </div>
+        </div>
         </div>
         )
   
