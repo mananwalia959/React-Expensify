@@ -38,7 +38,7 @@ export class ExpenseListFilters extends React.Component{
        
         <div className='input-group__item'>
             <select 
-            className='select'
+            className='select--secondary'
             value={this.props.filters.sortby} 
             onChange={this.onSortChange}>
             <option value = 'date' > Date </option>
@@ -47,7 +47,7 @@ export class ExpenseListFilters extends React.Component{
         </div>
         <div className='input-group__item'>
             <select
-            className= 'select' 
+            className= 'select--secondary' 
             value={this.props.filters.transactiontype} 
             onChange={this.onTransactionTypeChange}>
             <option value = 'both' > Both </option>

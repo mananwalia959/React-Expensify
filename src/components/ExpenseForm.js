@@ -70,12 +70,12 @@ export default class ExpenseForm extends React.Component {
 
     render(){
         return (
-            <div>
-            {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
+                <form className='form' onSubmit={this.onSubmit}>
+                {this.state.error && <p className='form__error'>{this.state.error}</p>}
                 <input
                     type = "text"
                     placeholder='Description'
+                    className='text-input'
                     autoFocus
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
@@ -83,12 +83,16 @@ export default class ExpenseForm extends React.Component {
                 <input
                     type = "text"
                     placeholder='Amount'
+                    className='text-input'
                     value={this.state.amount}
                     onChange={this.onAmountChange}
 
                 />
 
-                <select value={this.state.transaction} onChange={this.onTransactiontypeChange}>
+                <select 
+                value={this.state.transaction} 
+                className='select'
+                onChange={this.onTransactiontypeChange}>
                 <option value = 'expense'> Expense </option>
                 <option value = 'income' > Income </option>
                 </select>
@@ -101,16 +105,19 @@ export default class ExpenseForm extends React.Component {
                   id = {this.state.createdAt.toString()}
                   numberOfMonths={1}
                   isOutsideRange={() => false}
+                  block
                 />
 
                 <textarea 
+                className='textarea'
                 placeholder='Add a note for your expense(optional)'
                 value={this.state.note}
                 onChange={this.onNoteChange}
                 />
-                <button>Confirm</button>
+                <div >
+                <button className='button'>Confirm</button>
+                </div>
                 </form>
-            </div>
         )
     }
 }

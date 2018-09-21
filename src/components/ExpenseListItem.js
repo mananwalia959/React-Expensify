@@ -5,14 +5,15 @@ import moment from 'moment'
 
 
  const ExpenseListItem =({id,description,amount,createdAt,transaction}) => (
+    <Link className='list-item' to={`/edit/${id}`}>
     <div>
-    <Link to={`/edit/${id}`}>
-    <h3>{transaction[0].toUpperCase()+ transaction.slice(1)}:{description}</h3>
-    </Link>
-    <p> Rs.{(amount/100)}
-     __ 
-    {moment(createdAt).format('MMMM Do, YYYY')}</p>
+    <h3 className='list-item__title'>{transaction[0].toUpperCase()+ transaction.slice(1)}:{description}</h3>
+    <span className='list-item__sub-title'>{moment(createdAt).format('MMMM Do, YYYY')}</span>
     </div>
+    <div>
+    <h3 className='list-item__data'> Rs.{(amount/100)}</h3>
+    </div>
+    </Link>
 )
 
 export default ExpenseListItem;

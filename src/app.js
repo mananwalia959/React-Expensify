@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'; 
 import {startSetExpenses} from './actions/expenses'
 import {login,logout} from './actions/auth'
-import AppRouter,{history} from './routers/AppRouter.js';
+import AppRouter,{history} from './routers/AppRouter';
 import configureStore from './store/configureStore';
+import LoadingPage from './components/LoadingPage';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/initialize';
@@ -31,10 +32,9 @@ const renderapp = () => {
 
 
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 
-// ReactDOM.render(jsx, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {

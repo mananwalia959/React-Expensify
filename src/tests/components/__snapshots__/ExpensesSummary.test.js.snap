@@ -1,33 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should correctly render ExpensesSummary with 1 expense 1`] = `
-<div>
-  <h1>
-     Viewing 
-    1
-     
-    transaction
-     with Expenses =
-    4.56
-     and Incomes = 
-    1.23
-     
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+       Viewing 
+      <span>
+        1
+      </span>
+       
+      transaction
+       with Net Amount = 
+      <span>
+        -3.3299999999999996
+      </span>
+       
+      <br />
+      Expenses =
+      <span>
+        Rs.
+        4.56
+      </span>
+       and Incomes = 
+      <span>
+        Rs.
+        1.23
+      </span>
+       
+    </h1>
+    <div>
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Add Transaction
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should correctly render ExpensesSummary with multiple expenses 1`] = `
-<div>
-  <h1>
-     Viewing 
-    23
-     
-    transactions
-     with Expenses =
-    1.23
-     and Incomes = 
-    4.56
-     
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+       Viewing 
+      <span>
+        23
+      </span>
+       
+      transactions
+       with Net Amount = 
+      <span>
+        3.3299999999999996
+      </span>
+       
+      <br />
+      Expenses =
+      <span>
+        Rs.
+        1.23
+      </span>
+       and Incomes = 
+      <span>
+        Rs.
+        4.56
+      </span>
+       
+    </h1>
+    <div>
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Add Transaction
+      </Link>
+    </div>
+  </div>
 </div>
 `;
